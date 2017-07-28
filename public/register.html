@@ -1,0 +1,23 @@
+<!--<html>
+  <head>
+    <title>C to C-Register</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="javascripts/MusicPortalApp.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body ng-app="MusicPortalApp">
+    <div id='main' class="container" ng-controller="authController">-->
+      <form class="form-auth" ng-submit="register()">
+        <h2>Register</h2>
+        <p class="text-warning" ng-if="error_message">{{error_message}}</p>
+        <input type="username" ng-model="user.username" placeholder="Username" class="form-control"><br>
+        <input type="password" ng-model="user.password" placeholder="Password" class="form-control"><br>
+        <select type="role" ng-options="role for role in roles" ng-model="user.role" placeholder="Role" class="form-control"><br>
+        <div align="center">
+          <input type="submit" value="Register" class="btn btn-primary" />
+        </div>
+      </form>
+<!--    </div>
+  </body>
+</html>-->

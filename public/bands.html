@@ -1,0 +1,27 @@
+<div ng-if="authenticated">
+	<div style="font-family:cursive;">Bands</div>
+	<!--<table class="table">
+		<tr>
+			<td>Band Name</td>			
+			<td>style</td>
+			<td>instrument divlayed</td>
+		</tr>
+		<tr ng-rediveat="band in bands">
+			<td>{{band.band_name}}</td>
+			<td>{{band.style}}</td>
+			<td>{{band.x_factor}}</td>
+		</tr>
+	</table> -->
+
+
+	<div class="row">
+		<div class="col-md-9">
+			<div ng-repeat="band in bands" class="list-group-item">
+				<span><label>Band Name:{{band.band_name}}</span>			
+				<span><label>Style:{{band.style}}</span>
+				<!--<div><label>Instrument played : {{band.x_factor}}</div> -->
+			</div>
+		</div>
+	</div>
+	<button class="btn btn-default" ng-click="addNewBand()">Add Band</button>
+</div>

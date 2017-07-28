@@ -1,0 +1,11 @@
+<div ng-if="authenticated">
+	<div class="row">
+		<div class="col-md-4" ng-repeat="event in events">
+			<a href="#/events/{{event.event_name}}/details" class="thumbnail">
+				{{event.event_name}}<br>{{event.location}}
+			</a>
+		</div>
+	</div>
+
+
+</div>

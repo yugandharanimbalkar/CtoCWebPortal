@@ -1,0 +1,27 @@
+<div>
+	<div style="font-family:cursive;">Users (Band members) </div>
+	<!--<table class="table">
+		<tr>
+			<td>User</td>
+			<td>Instrument played</td>
+			<td>Style</td>
+			<td>Created at</td>
+		</tr>
+		<tr ng-repeat="user in bandmembers">
+			<td>{{user.username}}</td>
+			<td>{{user.instrument_played}}</td>
+			<td>{{user.style}}</td>
+			<td>{{user.created_at}}</td>
+		</tr>
+	</table>-->
+	<div class="scrollable-content">		
+		<div ng-repeat="user in bandmembers" class="list-group-item">
+			<span>User : {{user.username}}</span><br>
+			<span>Instrument played : {{user.instrument_played.instrument_name}}</span><br>
+			<span>Style : {{user.style}}</span><br>
+			<span>Created at : {{user.created_at}}</span><br>
+		</div>		
+	</div>
+	
+
+</div>

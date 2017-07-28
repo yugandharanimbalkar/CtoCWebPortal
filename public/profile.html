@@ -1,0 +1,44 @@
+<div ng-show="authenticated" ng-if="role=='Band Member'">
+	<div style="font-family:cursive;">User Profile</div>
+	<div align="center">
+		<img class="mythumbnail" ng-src="images/{{user.image||'https://www.google.co.in/imgres?imgurl=https%3A%2F%2Fwww.colourbox.com%2Fpreview%2F11291480-abstract-vector-alphabet-c-made-from-music-notes-alphabet-set.jpg&imgrefurl=https%3A%2F%2Fwww.colourbox.com%2Fvector%2Fabstract-vector-alphabet-c-made-from-music-notes-alphabet-set-vector-11291480&docid=6nGffhV07NuNoM&tbnid=9XabRrTgwr4ZbM%3A&vet=10ahUKEwjL0JKZtuDTAhWMKo8KHdNdBB4QMwhJKBAwEA..i&w=590&h=800&hl=en&authuser=0&bih=474&biw=1024&q=c%20music%20note&ved=0ahUKEwjL0JKZtuDTAhWMKo8KHdNdBB4QMwhJKBAwEA&iact=mrc&uact=8'}}"><br>
+	</div>
+	<table class="table">
+		<tr>
+			<td>Username</td>
+			<td>{{user.username}}</td>
+		</tr>
+		<tr>
+			<td>Role</td>
+			<td>{{user.role}}</td>			
+		</tr>
+		<tr>
+			<td>Instrument Played/ Vocalist</td>
+			<td>{{user.instrument_played.instrument_name}}</td>			
+		</tr>
+		<tr>
+			<td>Style of Music</td>
+			<td>{{user.style}}</td>			
+		</tr>		
+	</table>
+	<button class="btn btn-warning" ng-click="editProfile()">Edit Profile</button>
+</div>
+
+<div ng-show="authenticated" ng-if="role=='Band Manager'">
+	<div style="font-family:cursive;">User Profile</div>
+	<table class="table">
+		<tr>
+			<td>Username</td>
+			<td>{{user.username}}</td>
+		</tr>
+		<tr>
+			<td>Role</td>
+			<td>{{user.role}}</td>			
+		</tr>
+		<tr>
+			<td>Band Name</td>
+			<td>{{user.band_name.band_name}}</td>			
+		</tr>			
+	</table>
+	<!--<button class="btn btn-warning" ng-click="editManagerProfile()">Edit Profile</button> -->
+</div>

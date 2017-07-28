@@ -1,0 +1,99 @@
+<html lang="en">
+  <head>
+    <title>C to C</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--The above tags are used for page responsiveness of app according to device used The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta http-equiv="refresh" content="3000"><!-- refreshes the page after every 3000 secs-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.min.js"></script><!--used for ngRoute-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script><!--used for ngResource-->
+    <script type="text/javascript" src="javascripts/MusicPortalApp.js"></script>
+    <script type="text/javascript" src="javascripts/userController.js"></script>
+    <script type="text/javascript" src="javascripts/bandController.js"></script>
+    <script type="text/javascript" src="javascripts/profileController.js"></script>
+    <script type="text/javascript" src="javascripts/editProfileController.js"></script>
+    <script type="text/javascript" src="javascripts/createBand.js"></script>
+    <script type="text/javascript" src="javascripts/createEventController.js"></script>
+    <script type="text/javascript" src="javascripts/eventDetailsController.js"></script>
+
+    
+   <!-- <script type="text/javascript" src="javascripts/directives/fileModel.js"></script>
+    <script type="text/javascript" src="javascripts/services/uploadFileService.js"></script> -->
+
+   
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="stylesheets/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/sidebar.css">
+    
+  </head>
+  <body ng-app="MusicPortalApp">
+    <div id='main'>
+      <nav class="navbar navbar-default navbar-fixed-top"><!--This element is from bootstrap-->
+      <div class="container-fluid">
+      <a href="#" class="btn btn-info navbar-left navbar-text" id="menu-toggle" ng-show="authenticated"><i class="fa fa-bars" aria-hidden="true"></i></a>
+      <div class="container">  
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only"> Toggle navigation</span><span class="glyphicon glyphicon-user"></span></button><!--sr stands for screen reader only-->               
+          <a class="navbar-brand" href="#"><big>C to C</big></a>
+          <div class="navbar-collapse collapse">
+            <p class="navbar-text" style="font-style: italic"> A Web Portal to connect musicians...</p>
+            <p class="navbar-right navbar-text" ng-hide="authenticated"><a href="#/login">Login</a> or <a href="#/register">Register</a></p>
+            <p class="navbar-right navbar-text" ng-show="authenticated"><a href="#/login" ng-click="signout()">Logout</a></p>
+            <p class="navbar-right navbar-text" ng-show="authenticated">Signed in as {{current_user}}</p>
+          </div>
+
+        </div>
+        </div>
+      </nav> 
+      
+      <div class="col-md-offset-2 col-md-8"><!--Used for bordering of page-->
+        <div id="sidebar" ng-show="authenticated">
+          <ul class="sidebar-nav">
+            <li ng-show="role=='Admin'"><a href="#/bandMembers">Band Members</a></li>
+            <li ng-show="role=='Admin'"><a href="#/bandManagers">Band Managers</a></li>
+             <li ng-show="role=='Admin'"><a href="#/eventOrganisers">Event Organisers</a></li>
+            <li ng-show="role=='Admin'"><a href="#/bands">Bands</a></li>
+            <li ng-show="role=='Admin'"><a href="#/settings">Settings</a></li>
+            <li><a href="#/profile">Profile</a></li>
+            <li ng-show="role=='Event Organiser'"><a href="#/eventslist">Events</a></li>
+            <li ng-show="role=='Event Organiser'"><a href="#/create_event">Create Event</a></li>
+            <li ng-show="role=='Band Member'"><a href="#/audio_video">Audio/Video</a></li>
+            <li ng-show="role=='Band Manager'"><a href="#/invitation">Invitations</a></li>
+            <li ng-show="role=='Band Manager'" ng-if='haveBand==1'><a href="#/band">Band</a></li>
+            <li ng-show="role=='Band Manager'" ng-if='haveBand==0'><a href="#/create_band"> Create Band</a></li>
+          </ul>
+        </div>
+        <div id="sub-main">
+          <div class="container-fluid">  
+            <div ng-view></div>
+          </div>
+        </div>  
+      </div>
+      <!--<nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <div class="navbar-text pull navbar-left">
+            <p><em><small>copyright yugandhara</small></em></p>      
+
+          </div>   
+        </div>
+      </nav> -->
+    </div>
+
+     <script src="javascripts/jquery-1.10.2.min.js"></script>
+     <script src="stylesheets/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <!--javascript for toggle button -->
+    <script>
+    $("#menu-toggle").click(function(e){
+      e.preventDefault();//tells the system to prevent default event of going to different page after clicking on a href
+      $("#main").toggleClass("menuDisplayed");//toggles or not toggles the main container...try this with "menuDisplayed" or "toggled"
+    });
+    </script>
+  </body>
+</html>

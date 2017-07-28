@@ -1,0 +1,44 @@
+<div ng-show="authenticated" ng-if="role=='Event Organiser'">
+	<div style="font-family:cursive;">New Event</div>
+	<p ng-if="!myForm.description.$valid">Description exceeding 25 char</p>
+	<form name="myForm">		
+			Event Name: 
+			<input type="text" placeholder="Event Name" ng-model="event.event_name"></input><br>
+
+			Event Organiser:
+			{{username}}<br>
+
+			Location:
+			<!--<input type="text" g-places-autocomplete placeholder="Location" ng-model="event.location"></input><br>-->
+		
+			Date
+			<input type="date" ng-model="event.eventdate"></input><br>
+		
+		 	Description: <textarea name="description" ng-model="event.description" ng-maxlength="25"></textarea> <br>
+	</form>
+	<!--<table class="table">
+		<tr>
+			<td>Event Name</td>
+			<td><input type="text" placeholder="Event Name" ng-model="event.event_name"></input></td>
+		</tr>
+		<tr>
+			<td>Event Organiser</td>
+			<td>{{username}}</td>
+		</tr>
+		<tr>
+			<td>Location</td>
+			<td><input type="text" g-places-autocomplete placeholder="Location" ng-model="event.location"></input></td>
+		</tr>
+		<tr>
+			<td>Date</td>
+			<td><input type="date" ng-model="event.eventdate"></input></td>
+		</tr>
+		<tr>
+			<td>Description</td>
+			<td><textarea name="description" ng-model="event.description" ng-maxlength="250"></textarea> </td>
+		</tr> -->
+
+
+	</table>
+	<button class="btn btn-success" name="Create Event" ng-click="createEvent();">Create Event</button>
+</div>

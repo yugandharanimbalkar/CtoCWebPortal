@@ -1,0 +1,17 @@
+<form ng-show="authenticated" class="form-auth" ng-submit="addBand()">
+	<h2>New Band</h2>
+ 	<p class="text-warning" ng-if="error_message">{{error_message}}</p>
+ 	<div>
+ 		Band Name 
+ 		<input type="text" ng-model="band.band_name" placeholder="Band Name" class="form-control"><br>
+ 	</div>
+	<div>
+ 		X Factor
+ 		<input type="text" ng-model="band.x_factor" placeholder="X Factor" class="form-control"><br>
+ 	</div>
+ 	<div>
+ 		Band Style 
+ 		<input type="text" ng-model="band.style" placeholder="Style" class="form-control"><br>
+ 	</div>	
+	<input type="submit" value="Create" class="btn btn-primary" />
+</form>

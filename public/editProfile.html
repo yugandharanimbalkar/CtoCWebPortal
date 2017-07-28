@@ -1,0 +1,81 @@
+<!-- <div class="scrollable" ng-show="authenticated" ng-if="role=='Band Member'">
+	<div style="font-family:cursive;">User Profile</div>
+
+	<div>
+		<img class="mythumbnail" ng-src="{{thumbnail.dataUrl || 'https://s-media-cache-ak0.pinimg.com/564x/a7/d2/6c/a7d26c532c7fdf0a6b9ec009228977c8.jpg'}}"><br>
+		<div ng-show="uploading" class="progress">		
+		  	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+		    	<span class="sr-only"></span>
+		  	</div>
+		</div>
+		<form ng-submit="Submit()">
+			<label class="btn btn-success">Browse
+			<br><input type="file" file-model="file.upload" name="profile" ng-disabled="uploading" style="display:none" onchange="angular.element(this).scope().photoChanged(this.files)">
+			</label>
+			<br><button class="btn btn-primary" ng-disabled="uploading">Upload</button>
+		</form>	
+		<div ng-show="message">
+			<div ng-class="alert">{{message}}</div>
+		</div>
+
+	</div>
+	
+	
+	
+	<table class="table">
+		<tr>
+			<td>Username</td>
+			<td>{{user.username}}</input></td>
+		</tr>
+		<tr>
+			<td>Role</td>
+			<td>{{user.role}}</td>
+			
+		<tr>
+			<td>Instrument Played</td>
+			<td><select ng-options="instrument.instrument_name for instrument in instruments" ng-model="user.instrument_played"></input></td>
+					
+		</tr>
+		<tr>
+			<td>Style of Music</td>
+			<td><input type="text" ng-model="user.style"></input></td>
+				
+		</tr>	
+
+	</table>
+	<button ng-model="edit" class="btn btn-warning" ng-click="update()">Update Profile</button>
+	<button ng-model="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+</div> -->
+
+<div class="scrollable" ng-show="authenticated" ng-if="role=='Band Member'">
+	<div style="font-family:cursive;">User Profile</div>
+		<form>
+		<div>
+			<div>
+				<label>Profile Image</label>
+				<input type="file" id="file"></input>
+			</div>
+			<div align="center"><button ng-model="edit" class="btn btn-warning" ng-click="updateImage()">Update Profile Image</button></div>
+		</div><br>
+
+		<div>
+			<label>Username</label>
+			{{user.username}}
+		</div>
+		<div>
+			<label>Role</label>
+			{{user.role}}
+		</div>	
+		<div>
+			<label>Instrument Played</label>
+			<select ng-options="instrument.instrument_name for instrument in instruments" ng-model="user.instrument_played"></select>					
+		</div>
+		<div>
+			<label>Style of Music</label>
+			<input type="text" ng-model="user.style"></input>				
+		</div>	
+
+	</table>
+	<button ng-model="edit" class="btn btn-warning" ng-click="update()">Update Profile</button>
+	<button ng-model="cancel" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+</div>
